@@ -29,5 +29,28 @@ body{
     justify-content: center;
 }
 .container{
+    position: relative;
     max-width: 1440px;
+}
+.header{
+    position: absolute;
+    display: flex;
+    gap: 3rem;
+    top: 0;
+    left: 0;
+    padding: 4rem;
+}
+.navbar{
+    display: flex;
+    gap: 2rem;
+}
+.nav__link{
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--White);
+}
+.nav__li:hover{
+    height: 1.5rem;
+    border-bottom: 2px solid var(--White);
 }
