@@ -54,3 +54,34 @@ body{
     height: 1.5rem;
     border-bottom: 2px solid var(--White);
 }
+.hero{
+    display: flex;
+}
+.hero__content{
+    padding: 120px 100px 74px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.hero__title{
+    font-size: 2.5rem;
+    color: var(--Black);
+}
+.hero__paragraph{
+    line-height: 1.5;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--Dark-Gray);
+}
+.hero__btn{
+    display: flex;
+    gap: 2rem;
+    color: var(--Dark-Gray);
+}
+.hero__btn a{
+    text-transform: uppercase;
+    color: var(--Dark-Gray);
+    font-size: 15px;
+    letter-spacing: 12px;
+    font-weight: 500;
+}
