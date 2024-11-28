@@ -106,6 +106,7 @@ body{
     display: flex;
     gap: 2rem;
     color: var(--Black);
+    cursor: pointer;
 }
 .hero__btn a{
     text-transform: uppercase;
@@ -114,6 +115,9 @@ body{
     letter-spacing: 12px;
     font-weight: 600;
 }
+.hero__btn:hover > *{
+    color: var(--Dark-Gray);
+}
 .hero__nav__btns{
     display: flex;
 }
@@ -121,6 +125,9 @@ body{
     width: 80px;
     height: 80px;
     background-color: var(--Black);
+}
+.hero__nav__btn:hover{
+    background-color: var(--Very-Dark-Gray);
 }
 /* Down */
 .down{
