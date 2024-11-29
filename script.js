@@ -2,10 +2,26 @@ import {data} from './data.js'
 
 const prev = document.querySelector("#prev-btn");
 const next = document.querySelector("#next-btn");
+const heroImg = document.querySelector(".hero__img");
 const heroPicDesk = document.querySelector("#hero_pic_desk");
 const heroPicMob = document.querySelector("#hero_pic_mob");
 const heroTitle = document.querySelector(".hero__title");
 const heroDescription = document.querySelector(".hero__paragraph");
+const heroBtn = document.querySelector(".hero__btn");
+
+
+const animate = () => {
+    heroTitle.classList.add('fadeText');
+    heroDescription.classList.add('fadeText');
+    heroImg.classList.add('fade');
+    heroBtn.classList.add('fadeText');
+    setTimeout(() => {
+        heroTitle.classList.remove('fadeText');
+        heroDescription.classList.remove('fadeText');
+        heroImg.classList.remove('fade');
+        heroBtn.classList.remove('fadeText');
+    }, 1000);
+}
 
 let current = 0;
 next.addEventListener("click",()=>{
@@ -15,6 +31,7 @@ next.addEventListener("click",()=>{
     heroPicMob.setAttribute('srcset',data[idx].picture.mobile);
     heroTitle.innerText = data[idx].title;
     heroDescription.innerText = data[idx].description;
+    animate();
 });
 prev.addEventListener("click",()=>{
     let idx = (current - 1 + 3) % 3; 
@@ -23,4 +40,5 @@ prev.addEventListener("click",()=>{
     heroPicMob.setAttribute('srcset',data[idx].picture.mobile);
     heroTitle.innerText = data[idx].title;
     heroDescription.innerText = data[idx].description;
+    animate();
 });
