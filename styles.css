@@ -193,8 +193,21 @@ body{
     animation: fadeInText 0.5s linear;
 }
 @media screen and (min-width: 300px) and (max-width: 784px){
+    .hero{
+        height: auto;
+        flex-direction: column;
+    }
+    .hero__pic{
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }
+    .hero__right{
+        width: 100%;
+        padding: 2rem;
+    }
     .hero__content{
-        padding-inline: 1.5rem;
+        padding-inline: 0;
     }
     .hero__title{
         font-size: 2.25rem;
