@@ -215,6 +215,17 @@ body{
     .hero__btn a{
         font-size: 16px;
     }
+    .down{
+        width: 100%;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .about{
+        width: 100%;
+    }
+    .down__left-pic, .down__right-pic{
+        width: 100%;
+    }
     .about__title{
         font-size: 15px;
         letter-spacing: 3px;
