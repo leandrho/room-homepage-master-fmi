@@ -46,6 +46,53 @@ body{
     top: 0;
     left: 0;
     padding: 4rem;
+    z-index: 100;
+}
+.nav__container{
+    display: flex;
+    gap: 2rem;
+}
+.nav__menu{
+    display: none;
+}
+#menu{
+    display: none;
+}
+:not(.nav__menu:has(.menu:checked)) .iconhamb{
+    display: inline-block;
+}
+.nav__menu:has(.menu:checked) .iconhamb{
+    display: none;
+}
+:not(.nav__menu:has(.menu:checked)) .iconclose{
+    display: none;
+}
+.nav__menu:has(.menu:checked) .iconclose{
+    display: inline-block;
+}
+.header:has(.menu:checked) .nav__container{
+    display: flex;
+}
+.header:has(.menu:checked) .nav__link{
+    color: var(--Black);
+}
+.header:has(.menu:checked) .nav__link:hover{
+    color: var(--Dark-Gray);
+}
+.header:has(.menu:checked) .nav__li:hover{
+    height: 0;
+    border-bottom: none;
+}
+
+.container:has(.menu:checked) .main::after{
+        content: '';
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 10;
+        opacity: 0.5;
 }
 .navbar{
     display: flex;
@@ -67,10 +114,20 @@ body{
     align-items: center;
     overflow: hidden;
 }
+.hero__left{
+    position: relative;
+    height: 100%;
+}
+.hero__nav__btns-mob{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+}
 .hero__pic{
     height: 100%;
     width: 59%;
-    z-index: -1;
+    z-index: -10;
 }
 .hero__img{
     height: 100%;
@@ -193,14 +250,40 @@ body{
     animation: fadeInText 0.5s linear;
 }
 @media screen and (min-width: 300px) and (max-width: 784px){
+    .header{
+       width: 100%;
+       gap: 0;
+    }
+    .header:has(.menu:checked){
+        height: 20dvh;
+        background-color: var(--White);
+        justify-content: flex-end;
+        align-items: center;
+        padding-inline: 2rem;
+    }
+    .brand{
+       flex-grow: 1;
+       text-align: center;
+    }
+    .nav__container{
+       display: none;
+    }
+    .nav__menu{
+        display: block;
+        background-color: transparent;
+        z-index: 100;
+    }
     .hero{
         height: auto;
         flex-direction: column;
+        align-items: stretch;
+    }
+    .hero__left{
+
     }
     .hero__pic{
         height: 100%;
         width: 100%;
-        z-index: -1;
     }
     .hero__right{
         width: 100%;
@@ -214,6 +297,9 @@ body{
     }
     .hero__btn a{
         font-size: 16px;
+    }
+    .hero__nav__btns{
+        display: none;
     }
     .down{
         width: 100%;
