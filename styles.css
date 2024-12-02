@@ -29,8 +29,6 @@ body{
     font-family: 'League Spartan', sans-serif;
     font-size: 12px;
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
 }
 .container{
     position: relative;
@@ -83,7 +81,6 @@ body{
     height: 0;
     border-bottom: none;
 }
-
 .container:has(.menu:checked) .main::after{
         content: '';
         position: fixed;
@@ -285,9 +282,6 @@ body{
         flex-direction: column;
         align-items: stretch;
     }
-    .hero__left{
-
-    }
     .hero__pic{
         height: 100%;
         width: 100%;
@@ -366,9 +360,6 @@ body{
     .hero__content{
         padding-inline: 2rem;
     }
-}
-@media screen and (min-width: 1221px) and (max-width: 1919px){
-
 }
 @media screen and (min-width: 1920px) {
     .hero__title{
