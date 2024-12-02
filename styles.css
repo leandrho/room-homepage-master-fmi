@@ -121,7 +121,7 @@ body{
 .hero__nav__btns-mob{
     position: absolute;
     bottom: 0px;
-    left: 0px;
+    right: 0px;
     display: flex;
 }
 .hero__pic{
