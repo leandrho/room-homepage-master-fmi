@@ -1,7 +1,7 @@
 import {data} from './data.js'
 
-const prev = document.querySelector("#prev-btn");
-const next = document.querySelector("#next-btn");
+const prevs = document.querySelectorAll(".prev-btn");
+const nexts = document.querySelectorAll(".next-btn");
 const heroImg = document.querySelector(".hero__img");
 const heroPicDesk = document.querySelector("#hero_pic_desk");
 const heroPicMob = document.querySelector("#hero_pic_mob");
@@ -24,21 +24,26 @@ const animate = () => {
 }
 
 let current = 0;
-next.addEventListener("click",()=>{
-    current = ((current+1) % 3);
-    const idx = current;
-    heroPicDesk.setAttribute('srcset',data[idx].picture.desktop);
-    heroPicMob.setAttribute('srcset',data[idx].picture.mobile);
-    heroTitle.innerText = data[idx].title;
-    heroDescription.innerText = data[idx].description;
-    animate();
+nexts.forEach( next => {
+    next.addEventListener("click",()=>{
+        current = ((current+1) % 3);
+        const idx = current;
+        heroPicDesk.setAttribute('srcset',data[idx].picture.desktop);
+        heroPicMob.setAttribute('srcset',data[idx].picture.mobile);
+        heroTitle.innerText = data[idx].title;
+        heroDescription.innerText = data[idx].description;
+        animate();
+    });
 });
-prev.addEventListener("click",()=>{
-    let idx = (current - 1 + 3) % 3; 
-    current=idx;
-    heroPicDesk.setAttribute('srcset',data[idx].picture.desktop);
-    heroPicMob.setAttribute('srcset',data[idx].picture.mobile);
-    heroTitle.innerText = data[idx].title;
-    heroDescription.innerText = data[idx].description;
-    animate();
+prevs.forEach( prev => {
+    prev.addEventListener("click",()=>{
+        let idx = (current - 1 + 3) % 3; 
+        current=idx;
+        heroPicDesk.setAttribute('srcset',data[idx].picture.desktop);
+        heroPicMob.setAttribute('srcset',data[idx].picture.mobile);
+        heroTitle.innerText = data[idx].title;
+        heroDescription.innerText = data[idx].description;
+        animate();
+    });
 });
+
