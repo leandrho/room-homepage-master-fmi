@@ -227,6 +227,9 @@ body{
     width: 100%;
     object-fit: cover;
 }
+.hero__nav__btns-mob{
+    display: none;
+}
 @keyframes fadeIn {
     from{
         opacity: 0.2;
@@ -253,9 +256,10 @@ body{
     .header{
        width: 100%;
        gap: 0;
+       padding-inline: 2rem;
     }
     .header:has(.menu:checked){
-        height: 20dvh;
+        height: 5dvh;
         background-color: var(--White);
         justify-content: flex-end;
         align-items: center;
@@ -273,6 +277,9 @@ body{
         background-color: transparent;
         z-index: 100;
     }
+    .navbar{
+        gap: 1rem
+    }
     .hero{
         height: auto;
         flex-direction: column;
@@ -287,7 +294,7 @@ body{
     }
     .hero__right{
         width: 100%;
-        padding: 2rem;
+        padding: 4rem 2rem 4.35rem;
     }
     .hero__content{
         padding-inline: 0;
@@ -304,7 +311,7 @@ body{
     .down{
         width: 100%;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 3rem;
     }
     .about{
         width: 100%;
@@ -319,16 +326,33 @@ body{
     .about__paragraph{
         font-size: 15px;
     }
+    .hero__nav__btn{
+        min-width: 56px;
+        min-height: 56px;
+        max-width: 56;
+        max-height: 56px;
+        width: 56px;
+        height: 56px;
+    }
+    .hero__nav__btns-mob{
+        display: flex;
+    }
 }
 @media screen and (min-width: 785px) and (max-width: 1109px){
     .hero__content{
         padding-inline: 1.5rem;
     }
     .hero__title{
-        font-size: 2.25rem;
+        font-size: 1.75rem;
+    }
+    .hero__paragraph{
+        font-size: 14px;
+    }
+    .hero__btn {
+        gap: 0rem;
     }
     .hero__btn a{
-        font-size: 16px;
+        font-size: 15px;
     }
     .about__title{
         font-size: 15px;
@@ -338,7 +362,12 @@ body{
         font-size: 14px;
     }
 }
-@media screen and (min-width: 1110px) and (max-width: 1919px){
+@media screen and (min-width: 1110px) and (max-width: 1220px){
+    .hero__content{
+        padding-inline: 2rem;
+    }
+}
+@media screen and (min-width: 1221px) and (max-width: 1919px){
 
 }
 @media screen and (min-width: 1920px) {
